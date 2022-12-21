@@ -6,7 +6,7 @@ const ContactList = ({ deleteContact, contactToRender }) => {
     <>
       {contactToRender.length ? (
         <div className={css.contactList}>
-          <ul>
+          <ul className={css.ul}>
             {contactToRender.map(({ name, id, number }) => (
               <li key={id}>
                 {name}:{number}

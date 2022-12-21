@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import css from './ContactForm.module.css';
 
 export default class ContactForm extends Component {
   state = {
@@ -38,6 +39,7 @@ export default class ContactForm extends Component {
         <label htmlFor="">
           Name
           <input
+            className={css.input}
             type="text"
             name="name"
             value={this.state.name}
