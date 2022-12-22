@@ -55,7 +55,7 @@ export class App extends Component {
           reset={this.reset}
         />
         <h2>Contacts</h2>
-        <Filter onChange={e => this.setState({ filter: e.target.value })} />
+        <Filter onChange={this.onSearch} />
         <ContactList
           deleteContact={this.deleteContact}
           contactToRender={contactToRender}
