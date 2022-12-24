@@ -10,11 +10,6 @@ export class App extends Component {
     filter: '',
   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
   handleAddContact = newContact => {
     if (this.state.contacts.some(contact => contact.name === newContact.name)) {
       return alert(`${newContact.name} is already in contacts.`);
@@ -38,9 +33,9 @@ export class App extends Component {
     );
   };
 
-  onSearch = e => {
+  onSearch = event => {
     this.setState({
-      filter: e.target.value,
+      filter: event.target.value,
     });
   };
 
@@ -49,11 +44,7 @@ export class App extends Component {
     return (
       <>
         <h1>Phonebook</h1>
-        <ContactForm
-          handleAddContact={this.handleAddContact}
-          handleSubmit={this.handleSubmit}
-          reset={this.reset}
-        />
+        <ContactForm handleAddContact={this.handleAddContact} />
         <h2>Contacts</h2>
         <Filter onChange={this.onSearch} />
         <ContactList
